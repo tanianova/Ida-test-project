@@ -1,3 +1,7 @@
 import './styles/index.scss'
 
-console.log('it works')
+window.addEventListener('DOMContentLoaded', () => {
+    'use strict';
+ 
+});
+
