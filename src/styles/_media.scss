@@ -1,0 +1,40 @@
+@media screen and(max-width:1100px) {
+    .page-content__cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and(max-width:768px) {
+    .wrapper{
+        width: calc(100% - 30px);
+    }
+
+    .page-content {
+        &__cards-container {
+            width: 50%;
+            grid-template-columns: 1fr;
+        }
+
+        &__form {
+            width: 50%;
+        }
+    }
+}
+@media screen and(max-width:600px) {
+    .page-top__title{
+        font-size: 18px;
+    }
+    .page-content{
+        flex-direction: column;
+        &__cards-container {
+            width: 100%;
+             .card-description{
+                 font-size: 14px;
+             }
+        }
+
+        &__form {
+            width: 100%;
+        }
+    }
+}
