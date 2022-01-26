@@ -1,4 +1,5 @@
-const maskPrice = (selector) => {
+const maskPrice = ({input}) => {
+  const inputs = document.querySelectorAll(input);
   const checkNumInputs = (e) => {
     e.target.value = e.target.value.replace(/\D/, "");
   };
@@ -7,7 +8,6 @@ const maskPrice = (selector) => {
     e.target.value = mask;
   };
 
-  let inputs = document.querySelectorAll(selector);
   inputs.forEach((input) => {
     input.addEventListener("input", checkNumInputs);
     input.addEventListener("change", createMask);

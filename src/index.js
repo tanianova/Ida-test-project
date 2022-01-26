@@ -1,11 +1,19 @@
-import maskPrice from "./modules/maskPrice";
-import createCard from "./modules/createCard";
-import checkInputValue from "./modules/checkInputValue";
 import "./styles/index.scss";
+
+import maskPrice from "./modules/maskPrice";
+import checkInputValue from "./modules/checkInputValue";
+import submitForm from "./modules/submitForm";
 
 window.addEventListener("DOMContentLoaded", () => {
   "use strict";
-  maskPrice("[name=price]");
-  checkInputValue('.page-content__form','.page-content__form .button')
-  
+  maskPrice({ input: "[name=price]" });
+  checkInputValue({
+    formSelector: ".page-content__form",
+    submitSelector: ".page-content__form .button",
+  });
+  submitForm({
+    formSelector: ".page-content__form",
+    wrapperSelector: ".page-content__cards-container",
+    inputsSelector:".page-content__form input"
+  });
 });

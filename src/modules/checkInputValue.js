@@ -1,4 +1,4 @@
-const checkInputValue = (formSelector, submitSelector) => {
+const checkInputValue = ({formSelector, submitSelector}) => {
   const submitButton = document.querySelector(submitSelector);
   const form = document.querySelector(formSelector);
 
