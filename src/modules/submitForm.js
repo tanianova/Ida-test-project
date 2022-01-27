@@ -1,4 +1,4 @@
-import renderCards from "./renderCards";
+import createCard from "./createCard";
 
 const submitForm = ({ formSelector, wrapperSelector, inputsSelector }) => {
   const form = document.querySelector(formSelector);
@@ -20,7 +20,7 @@ const submitForm = ({ formSelector, wrapperSelector, inputsSelector }) => {
     e.preventDefault();
 
     const data = serializeForm();
-    renderCards(data, wrapper);
+    createCard(data, wrapper);
     clearInputs();
   };
 

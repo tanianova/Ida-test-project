@@ -102,7 +102,7 @@ textarea {
 }
 
 .animatedIn {
-    animation: 3s fadeIn;
+    animation: 2s fadeIn ease-in;
 }
 
 @keyframes fadeIn {
@@ -114,10 +114,12 @@ textarea {
         opacity: 1;
     }
 }
-.animatedOut{
-    animation: 3s fadeOut;
+
+.animatedOut {
+    animation: 2s fadeOut ease-out;
 }
-@keyframes fadeIn {
+
+@keyframes fadeOut {
     from {
         opacity: 1;
     }
