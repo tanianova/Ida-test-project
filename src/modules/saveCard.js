@@ -1,5 +1,6 @@
-const saveCard=(data)=>{
-console.log(data);
-}
-
+const saveCard = (data) => {
+  const uniqueId = Date.now();
+  localStorage.setItem(`card ${uniqueId}`, JSON.stringify(data));
+   
+};
 export default saveCard;

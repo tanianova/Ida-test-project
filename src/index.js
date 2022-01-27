@@ -1,9 +1,11 @@
-import "./styles/index.scss";
-
-import maskPrice from "./modules/maskPrice";
+import  maskPrice  from "./modules/maskPrice";
 import checkInputValue from "./modules/checkInputValue";
 import submitForm from "./modules/submitForm";
 import deleteCard from "./modules/deleteCard";
+import sortCards from "./modules/sortCards";
+
+import "./styles/index.scss";
+
 
 window.addEventListener("DOMContentLoaded", () => {
   "use strict";
@@ -14,11 +16,15 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   submitForm({
     formSelector: ".page-content__form",
-    wrapperSelector: ".page-content__cards-container",
-    inputsSelector:".page-content__form .input"
+    cardsContainerSelector: ".page-content__cards-container",
+    inputsSelector: ".page-content__form .input",
   });
   deleteCard({
-    wrapperSelector:".page-content__cards-container",
-    btnDeleteClass:"card-delete"
+    wrapperSelector: ".page-content__cards-container",
+    btnDeleteClass: "card-delete",
+  });
+  sortCards({
+    sortBtnSelector:".select-button",
+    cardsContainerSelector:".page-content__cards-container"
   })
 });

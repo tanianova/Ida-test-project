@@ -1,4 +1,18 @@
-const createCard = ({ name, description, link, price }, wrapper) => {
+const createCard = (
+  { name, description, price, link },
+  cardsContainerSelector
+) => {
+  const keys = Object.keys(localStorage);
+
+  keys.forEach((key) => {
+    const items = localStorage.getItem(key);
+    // console.log(name,description,link,price);
+    // items.forEach((item) => {
+    //   console.log(item.name, item.price);
+    // });
+  });
+
+  const cardsContainer = document.querySelector(cardsContainerSelector);
   let card = document.createElement("div");
   card.classList.add("card");
   card.classList.add("animatedIn");
@@ -14,7 +28,7 @@ const createCard = ({ name, description, link, price }, wrapper) => {
         <button class="card-delete"></button>
     `;
 
-  wrapper.appendChild(card);
+  cardsContainer.appendChild(card);
 };
 
 export default createCard;

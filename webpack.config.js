@@ -9,11 +9,11 @@ console.log(mode + " mode");
 
 module.exports = {
   mode: mode,
-  // entry: {
-  //   scripts: "./src/index.js",
+  entry: {
+    scripts: "./src/index.js",
     
-  // },
-  entry: ['babel-polyfill', './src/index.js'],
+  },
+  // entry: ['babel-polyfill', './src/index.js'],
   output: {
     filename: "[name].[contenthash].js",
     assetModuleFilename: "assets/[hash][ext][query]",
