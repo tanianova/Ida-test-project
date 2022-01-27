@@ -3,10 +3,13 @@ const deleteCard = ({ wrapperSelector, btnDeleteClass }) => {
 
   wrapper.addEventListener("click", (e) => {
     const target = e.target;
-    // target.parentNode.classList.remove('animatedIn')
-    // target.parentNode.classList.add('animatedOut')
+
     if (target && target.classList.contains(btnDeleteClass)) {
-      target.parentNode.parentNode.removeChild(target.parentNode);
+      target.parentNode.classList.remove("animatedIn");
+      target.parentNode.classList.add("animatedOut");
+      setTimeout(() => {
+        target.parentNode.parentNode.removeChild(target.parentNode);
+      }, 1000);
     }
   });
 };

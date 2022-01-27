@@ -1,6 +1,4 @@
-const createCard = (cardInfo, wrapper) => {
-  const { name, description, link, price } = cardInfo;
-
+const createCard = ({ name, description, link, price }, wrapper) => {
   let card = document.createElement("div");
   card.classList.add("card");
   card.classList.add("animatedIn");

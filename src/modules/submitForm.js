@@ -1,4 +1,5 @@
 import createCard from "./createCard";
+import saveCard from "./saveCard";
 
 const submitForm = ({ formSelector, wrapperSelector, inputsSelector }) => {
   const form = document.querySelector(formSelector);
@@ -21,6 +22,7 @@ const submitForm = ({ formSelector, wrapperSelector, inputsSelector }) => {
 
     const data = serializeForm();
     createCard(data, wrapper);
+    saveCard(data)
     clearInputs();
   };
 
