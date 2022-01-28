@@ -4,28 +4,31 @@ import submitForm from "./modules/submitForm";
 import deleteCard from "./modules/deleteCard";
 import sortCards from "./modules/sortCards";
 import renderCards from "./modules/renderCards";
-
 import "./styles/index.scss";
-
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", function () {
   "use strict";
-  maskPrice({ input: "[name=price]" });
+
+  maskPrice({
+    input: "[name=price]"
+  });
   checkInputValue({
     formSelector: ".page-content__form",
-    submitSelector: ".page-content__form .button",
+    submitSelector: ".page-content__form .button"
   });
   submitForm({
     formSelector: ".page-content__form",
     cardsContainerSelector: ".page-content__cards-container",
-    inputsSelector: ".page-content__form .input",
+    inputsSelector: ".page-content__form .input"
   });
-  renderCards({ cardsContainerSelector: ".page-content__cards-container" });
+  renderCards({
+    cardsContainerSelector: ".page-content__cards-container"
+  });
   deleteCard({
     cardsContainerSelector: ".page-content__cards-container",
-    btnDeleteClass: "card-delete",
+    btnDeleteClass: "card-delete"
   });
   sortCards({
     sortBtnSelector: ".select-button",
-    cardsContainerSelector: ".page-content__cards-container",
+    cardsContainerSelector: ".page-content__cards-container"
   });
 });
