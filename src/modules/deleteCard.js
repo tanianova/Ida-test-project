@@ -1,5 +1,16 @@
 const deleteCard = ({ cardsContainerSelector, btnDeleteClass }) => {
   const cardsContainer = document.querySelector(cardsContainerSelector);
+  
+
+  const removeCardFromLocalStorage = (card) => {
+    const cards = JSON.parse(localStorage.cards);
+    for (let i = 0; i < cards.length; i++) {
+      if (cards[i].name === card.children[1].children[0].innerText) {
+        cards.splice(i, 1);
+      }
+      localStorage.cards = JSON.stringify(cards);
+    }
+  };
 
   cardsContainer.addEventListener("click", (e) => {
     const target = e.target;
@@ -9,13 +20,9 @@ const deleteCard = ({ cardsContainerSelector, btnDeleteClass }) => {
       target.parentNode.classList.add("animatedOut");
       setTimeout(() => {
         target.parentNode.parentNode.removeChild(target.parentNode);
-        if (cardsContainer.children.length === 0) {
-          cardsContainer.innerHTML = `<h2>Товаров пока нет</h2>`;
-        }
+        removeCardFromLocalStorage(target.parentNode);
       }, 1000);
     }
-    
-   
   });
 };
 

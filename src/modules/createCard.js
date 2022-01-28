@@ -2,8 +2,6 @@ const createCard = (
   { name, description, price, link },
   cardsContainer
 ) => {
-
-
   let card = document.createElement("div");
   card.classList.add("card");
   card.classList.add("animatedIn");
@@ -19,7 +17,6 @@ const createCard = (
         <button class="card-delete"></button>
     `;
 
-  cardsContainer.innerHTML=''
   cardsContainer.appendChild(card);
 };
 

@@ -1,15 +1,11 @@
 const saveCard = (data) => {
-  const uniqueId = Date.now();
-  localStorage.setItem(`card ${uniqueId}`, JSON.stringify(data));
-  
-  const keys = Object.keys(localStorage);
+  let cards;
+  localStorage.getItem("cards") === null
+    ? (cards = [])
+    : (cards = JSON.parse(localStorage.getItem("cards")));
 
-  keys.forEach((key) => {
-    const items = localStorage.getItem(key);
-    // console.log(name,description,link,price);
-    // items.forEach((item) => {
-    //   console.log(item.name, item.price);
-    // });
-  });
+  cards.push(data);
+  localStorage.setItem("cards", JSON.stringify(cards));
+
 };
 export default saveCard;

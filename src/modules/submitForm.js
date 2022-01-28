@@ -36,7 +36,7 @@ const submitForm = ({
     msgSuccess();
 
     const data = serializeForm();
-    saveCard(data,cardsContainer);
+    saveCard(data);
     createCard(data, cardsContainer);
     clearInputs();
   };
