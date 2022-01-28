@@ -66,6 +66,13 @@
                 padding: 9px 16px 10px
             }
         }
+
+        .submit-message {
+            text-align: center;
+            color: $success;
+            font-size: 12px;
+            margin-top: 10px;
+        }
     }
 
     &__cards-container {
@@ -131,7 +138,7 @@
                 background-image: url('../images/btn-delete.svg');
                 background-repeat: no-repeat;
                 background-position: center;
-                 
+
             }
 
             &:hover .card-delete {

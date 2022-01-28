@@ -1,7 +1,7 @@
-const deleteCard = ({ wrapperSelector, btnDeleteClass }) => {
-  const wrapper = document.querySelector(wrapperSelector);
+const deleteCard = ({ cardsContainerSelector, btnDeleteClass }) => {
+  const cardsContainer = document.querySelector(cardsContainerSelector);
 
-  wrapper.addEventListener("click", (e) => {
+  cardsContainer.addEventListener("click", (e) => {
     const target = e.target;
 
     if (target && target.classList.contains(btnDeleteClass)) {
@@ -9,8 +9,13 @@ const deleteCard = ({ wrapperSelector, btnDeleteClass }) => {
       target.parentNode.classList.add("animatedOut");
       setTimeout(() => {
         target.parentNode.parentNode.removeChild(target.parentNode);
+        if (cardsContainer.children.length === 0) {
+          cardsContainer.innerHTML = `<h2>Товаров пока нет</h2>`;
+        }
       }, 1000);
     }
+    
+   
   });
 };
 

@@ -41,6 +41,7 @@ const sortCards = ({ sortBtnSelector, cardsContainerSelector }) => {
           )
         );
         case "":
+           
           //тут наверно нужно добавить сортировку по времени  добавления, еще не придумала, как реализовать
           // console.log([...cards]);
     }

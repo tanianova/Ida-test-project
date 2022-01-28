@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
     inputsSelector: ".page-content__form .input",
   });
   deleteCard({
-    wrapperSelector: ".page-content__cards-container",
+    cardsContainerSelector: ".page-content__cards-container",
     btnDeleteClass: "card-delete",
   });
   sortCards({
